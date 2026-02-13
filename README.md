@@ -24,13 +24,11 @@ The dataset is organized into two distinct subsets to ensure quality control and
 * **Size:** 250 Images 
 * **Description:** A compact set of images where every parameter has been audited and validated by professional photographers .
 * **Purpose:** These images serve as the "trusted anchor" for retrieval-based grounding. They are **not** intended as a benchmark for performance evaluation but as context for the VRAG pipeline .
-
 ### 2. Generation Set (SPAD-4k)
 * **Location:** `data/spad_generation_set/`
-* **Size:** 4,000 Images 
+* **Size:** 4,000 Images (plus augmented variations)
 * **Sources:** Curated from public photography repositories (Unsplash) and community critique datasets (RPCD) .
-* **Description:** The core dataset annotated using the VRAG pipeline. Contains multi-modal labels including scores, binary indicators, and text .
-
+* **Description:** The core dataset annotated using the VRAG pipeline. It contains multi-modal labels including scores, binary indicators, and text. **includes visually augmented subsets (Rule of Thirds, Golden Rectangle) paired with ShareGPT-formatted annotations for instruction tuning.**
 ---
 
 ## 🚀 Usage
