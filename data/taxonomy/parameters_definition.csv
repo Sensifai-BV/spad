@@ -1,0 +1,1428 @@
+Colonne 1,Parameter,Feature,Evaluation,Range of Evaluation,Description,Prompt,New Prompt
+1,Minimizing Distractions,Composition,Score,"Refined, Busy",Minimize distractions to highlight the main subject.,"Give a continuous score for this one between 0 and 100:
+Value of 0: the image is very refined;
+Value of 100: the image is very busy.
+Score type: continuous score between 0 and 100.","This parameter measures the degree of visual distraction caused by secondary elements in the image. It assesses the extent to which these elements disrupt the clear perception of the main subject by analyzing visual density, clarity of hierarchy, and the risk of perceptual competition. This evaluation does not consider the overall aesthetics of the scene but solely the impact of these elements on the subject's legibility.
+
+Scoring examples:
+- 0: The image is very clean; the subject is isolated, with no visible competing elements around it.
+
+- 50: The image contains some perceptible secondary elements, but their presence does not hinder the reading of the main subject.
+
+- 100: The image is visually cluttered; numerous elements compete with the subject, making its perception difficult or ambiguous."
+2,Subtle Complexity,Composition,Boolean,Does the image have fine details that may not be immediately obvious but add to the complexity of the image?,Fine details that may not be immediately evident but add to the image's complexity.,"Does the image have fine details that may not be immediately obvious but add to the complexity of the image? Elements in the image which have an importance in the story, e.g. a character which we cannot distinguish at first glance but which would be important.
+Score type: Boolean (True/False).","This parameter identifies the presence of subtle visual or narrative details, often barely noticeable at first glance, but which enrich the interpretation of the image once discovered. This could be a character in the background, a secondary gesture, a reflection, or a visual clue that gains significance later. This criterion does not concern overall visual density, but rather an image's ability to reveal meaningful elements after a delay.
+
+Examples:
+– True: A secondary silhouette in a mirror, a subtle symbol integrated into the background, a narrative detail revealed after careful observation.
+
+– False: An immediately legible image where all elements are apparent and predictable, or details that, while numerous, add nothing to the understanding or narrative of the image."
+3,Frame in a frame,Composition,Boolean,Does the image use elements in the scene to frame the subject?,Use elements in the scene to frame the subject.,"Does the image use elements in the scene to frame the subject?
+Score type: Boolean.","This parameter detects the use of scene elements explicitly serving to visually frame the subject in a compositional manner. These can be openings (doors, windows), objects (branches, arches), or areas of light that create a framing structure within the image. This type of framing must be clearly discernible in the image's visual construction, and not simply due to the presence of elements near the subject without a formal function.
+
+Examples:
+– True: A subject photographed through an arch, a window, or framed by two walls, creating a clear boundary.
+
+– False: The subject is surrounded by elements in the scene, but these do not form a perceptible or structuring visual frame."
+4,Leading Space,Composition,Boolean,Does the image leave space in the direction of the subject'sgaze or movement?,Leave space in the direction of the subject's gaze or movement.,"Is the photograph effectively utilizing leading space by providing ample room in the direction of the subject's gaze or movement, maintaining visual balance, and adding narrative context to the image? Examine the image to ensure that the additional space enhances anticipation for the subject's actions, complements the composition's balance, and suggests a storyline beyond the frame.
+Score type: Boolean.","This parameter assesses whether the image reserves open space in the direction of a subject's gaze or movement, thereby enhancing readability, visual balance, and compositional dynamism. This type of space allows the viewer to anticipate an action or extend the narrative beyond the frame, directing their gaze toward a significant area. It is not simply an empty space, but rather a space used intentionally as an extension of a narrative or directional axis.
+
+Examples:
+– True: A runner photographed with space in front of them, suggesting a race in progress; a portrait where the subject's gaze extends into an evocative void.
+
+– False: The subject looks at or moves toward the edge of the image without reserved space; the empty space is present but without any perceptible connection to a narrative direction or intention."
+5,Leading Lines,Composition,Boolean,Does the image use natural or artificial lines to direct the eye towards the subject?,Use natural or artificial lines to direct the eye towards the subject.,"Determine whether the image uses natural or artificial lines to direct the eyes towards the subject?
+Score type: Boolean.","This parameter identifies the explicit use of natural lines (paths, shadows, branches, etc.) or artificial lines (walls, roads, structures, etc.) to guide the viewer's eye toward the main subject. These lines must be perceived as active visual vectors, creating a clear direction or convergence toward a point of interest. It is not enough for lines to simply be present in the image; they must play a structuring compositional role.
+
+Examples:
+– True: A road, a bridge, or a row of trees leading directly to the subject, creating a perspective or convergence effect.
+
+– False: Lines present in the scene but not pointing toward the subject or contributing to the structuring of the viewer's perception."
+6,Pattern Recognition,Composition,Boolean,Does the image seek to use repeating patterns or symmetrical arrangements?,Seek and use repetitive patterns or symmetrical arrangements.,"Does the image showcase a deliberate and orderly arrangement of elements which creates a visual rhythm through geometric repetition or symmetrical balance?
+Score type: Boolean.","This parameter detects the intentional use of repetitive patterns, regular alignments, or symmetrical arrangements in image composition. These visual forms create a perceptual rhythm or a sense of order, often through the repetition of similar elements (objects, textures, silhouettes) or through balanced geometric organization. It is not simply a resemblance between elements, but a structured visual arrangement perceived as such by the viewer.
+
+Examples:
+– True: A series of aligned windows, characters forming a symmetrical line, or a sequence of identical objects placed at regular intervals.
+
+– False: A scene containing similar objects but arranged irregularly or without any perceptible structure."
+7,Composition Contrast,Composition,Score,"['Low', 'High']","Use differences in color, light, or texture to emphasize the subject.","Define here the importance of differences in color, light, or texture to emphasize the subject.
+Value of 0: low compositional contrast;
+At 100: high compositional contrast.
+Score type: continuous score between 0 and 100.","This parameter measures the intensity with which the image uses differences in color, light, or texture to highlight the main subject. High compositional contrast creates a sharp visual separation between the subject and its surroundings, while low contrast conveys a smoother continuity or blending of elements. The goal is not to judge the image's quality, but rather to assess how well these contrasts contribute to the visual organization and hierarchy of the scene.
+
+Examples of ratings:
+- 0: The subject blends into the background, with little difference in light, color, or texture.
+- 50: The contrast is moderate: the subject stands out but remains integrated into the overall scene.
+- 100: The subject is strongly emphasized by a marked contrast in light, tone, or texture compared to its surroundings."
+8,Depth of Field,Composition,Score,"['Sharp', 'Shallow']",Control the sharpness of the background to isolate the subject or show the environment.,"It controls the sharpness of the background to isolate the subject or show the environment.
+Set the depth of field value here:
+Value of 0: the image is completely sharp;
+At 100: the image has a very shallow depth of field.
+Score type: continuous score between 0 and 100.","This parameter measures the extent of the area of ​​sharpness in the image, in order to assess the depth of field used. A shallow depth of field corresponds to a very small area of ​​sharpness (usually around the main subject), with a blurred background; a large depth of field corresponds to sharpness extending across the entire scene. This measurement does not judge the intention or style, but rather how sharpness is distributed between the planes of the image.
+
+Examples of ratings:
+- 0: The entire scene is sharp, from the foreground to the background (landscape, architectural photography, etc.).
+- 50: The subject is sharp, and the background begins to blur slightly, without being completely blurred.
+- 100: The subject is isolated against a completely blurred background, with no sharp details in the environment."
+9,Perspective Shift,Composition,Score,"Low angle, Steeply dipped",Change the perspective or angle to reveal unique aspects of the subject.,"It means changing the perspective or angle to reveal unique aspects of the subject. 
+Set the perspective angle on a continuous scale from 0 to 100:
+Value of 0: the image is in a strong low tilt;
+At 50: Neutral; Image is neither taken from a low or a high angle.
+At 100: the image is steeply dipped.
+Score type: continuous score between 0 and 100.","This parameter measures the vertical orientation of the shooting perspective, on a scale ranging from an extreme low angle to a radical high angle. A low angle means the image is taken from a very low point, oriented upwards; a high angle refers to a high point, oriented downwards. A mid-range score corresponds to a neutral shot, taken at eye level. The score therefore reflects the direction and intensity of the vertical angle adopted by the photographer.
+
+Examples of scoring:
+- 0: Very pronounced low angle — the subject is seen from below, with a strong upward effect.
+
+- 50: Neutral perspective — the subject is captured at eye level, without any perceptible tilt.
+
+- 100: Radical high angle — the subject is seen from above, with a strong downward or downward effect."
+10,Negative Space,Composition,Boolean,Does the image use empty space to highlight the subject?,Use empty space to highlight the subject and create a balanced composition.,"Does the image utilize empty areas surrounding the main subject to enhance its prominence?
+Score type: Boolean.","This parameter identifies the deliberate use of empty or sparsely populated areas around the main subject to enhance its visibility, create visual tension, or structure the composition. Negative space is perceived as an active element of the image, highlighting the subject through contrast or isolation, without containing secondary narrative or visual information. This criterion is not limited to the mere presence of empty space, but also encompasses its intentional use as a graphic or narrative counterpoint.
+
+Examples:
+– True: A subject positioned against a vast, plain background, a silhouette against an empty sky, or a figure isolated amidst a minimal setting.
+
+– False: An image with few elements where empty space does not structure the composition; or an empty background with no strong perceptual connection to the subject.
+
+"
+11,Highlight textures and details to add depth and interest.,Composition,Score,"No, Yes",Highlight textures and details to add depth and interest.,"Does the image include textures and details that make it strong?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","# 🧠 Prompt AI — Visual Texture Evaluation (v2.5)
+
+## 🎭 ROLE
+
+You are an **image critic specializing in texture analysis**.
+
+Your mission: to evaluate **how actively textures contribute to the composition, depth, and narrative** of a photograph.
+
+---
+
+## 🎯 OBJECTIVE
+
+Evaluate the **function** of textures in the image, not just their presence.
+
+Focus on their ability to be:
+
+* **Central and visually dominant**
+* **Readable** (sharp, detailed, contrasted)
+* **Active in the composition** (guiding the viewer's eye, hierarchy, rhythm)
+* **Relevant to the narrative or atmosphere**
+
+Textures should be **structural, not decorative**.
+
+They must enhance the **visual tension**, **depth**, or **narrative intent** of the image.
+
+---
+
+## 📉 TO BE PENALIZED
+
+* Textures **in the background**, **blurred**, or **without visual function**
+* **Graphic or repetitive patterns** mistakenly taken for texture (circles, lines, tiles)
+* Surface details **that do not influence the interpretation of the image**
+* **Textures that are clearly visible but have no impact on the narrative or perception**
+* **Presence of material not used visually** (e.g., smooth leather, polished metal, clean parquet flooring)
+* **Reflections or lighting** should **never be confused with a substantial textural element**, even if they are based on a visible surface (e.g., puddles, shop windows, neon lights)
+* **Ornaments, sculpted motifs, or narrative details** (architecture, frescoes, costumes) **should not be overemphasized** if the material itself **is not central to the interpretation**.
+
+> ⚠️ A **repeated shape**, a **well-rendered surface**, or a **legible detail** is not enough.
+
+> Texture must transform the perception, organization, or atmosphere** of the image. If the image would function **exactly the same without texture**, it is **not relevant**.
+
+---
+
+## 🌀 SPECIAL CASES
+
+### Texture covering the entire image
+
+Award a **high score (80–100)** only if:
+
+* The material is **visually tangible** (cracking, grain, roughness, etc.)
+* It **structures the reading** or generates **tension, immersion, or depth**
+
+> ⚠️ A **repeating pattern covering the entire image** is **not enough** without a **strong and meaningful texture**.
+
+### Graphic or Architectural Image
+
+Do not give a high score if:
+
+* The surfaces are smooth, clean, and regular, even when well-lit.
+* The image relies on shapes or structures, without any perceptible texture.
+
+Ask yourself:
+**Would the image be the same if the surface details were blurred?**
+
+If yes ➝ **texture is not an active factor.**
+
+### Misused Texture (Trick)
+
+Some textures **appear to be present** but do not **transform the image into a meaningful interpretation**:
+
+* Banana peel, clean parquet flooring, leather, standard clothing, polished metal.
+
+Even if clearly visible, these textures **should not be scored** unless they **convey a clear visual intention** (tension, symbolism, atmosphere).
+
+### Urban or Cinematic Atmospheres
+
+Even if an image contains textures (walls, floors, puddles), **they should only be emphasized if they directly contribute to the visual experience or immersion**.
+
+> Be careful with street scenes, nighttime scenes, or cinematic images: if the visual impact relies on lighting, lines, or reflections, texture may appear present without being active. **Always test the blurry view** to confirm its relevance.
+
+### Sculptures, Frescoes, Complex Details
+
+> Do not confuse **sculpted narrative or decorative details** with **surface texture**.
+
+> A visually rich image can have **very little texture** if its material **does not serve the visual experience** or **can be replaced by a flat pattern**.
+
+---
+
+## 🔍 TIP — Blurry Reading
+
+Imagine the image blurred:
+If the **material still structures perception**, **guides the eye**, or **creates volume**, the texture is relevant.
+
+But if **the visual message remains unchanged**, or if the material becomes invisible without altering the reading experience, the texture is **decorative**.
+
+---
+
+## ✅ RATING
+
+| Scale | Description |
+
+| ---------- | ------------------------------------------------------------------------ |
+
+| **0–20** | Texture nonexistent, decorative, or without perceptual impact |
+
+| **30–60** | Texture visible but secondary, or partially useful |
+
+| **70–100** | Texture central, legible, and structuring to the reading experience or atmosphere |
+
+---
+
+## 🧾 CANONICAL EXAMPLES
+
+### 🔸 Score 10:
+
+A clean white wall, a neat floor with no visible irregularities, polished metal — **no tension or materiality exploited**.
+
+### 🔸 Score 30:
+
+A damp urban alleyway with a degraded floor and textured walls, but whose graphic impact would still rely on lighting and perspective, even if blurred.
+
+### 🔸 Score 40:
+
+A highly sculpted Gothic portal, but whose interpretation relies on figurative details rather than the materiality.
+
+### 🔸 Score 50:
+
+A sweater that is visible and sharp but secondary in the image, a slightly grainy surface with no narrative effect.
+
+### 🔸 Score 70:
+
+A wrinkled hand resting on a rough wooden table, where the material **carries the narrative or emotion**.
+
+### 🔸 Score 90+:
+
+Immersive close-up of a cracked wall, an organic surface that **structures the image** and **absorbs the gaze** through its sheer texture."
+12,Perspective Lines,Composition,Score,"No, Yes",Use converging lines to create depth and guide the eye.,"Does the image have perspective lines?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the presence and visual impact of converging lines in the composition, used to structure space, suggest depth, and guide the eye toward a focal point. These lines can originate from architecture, natural geometry, or the placement of elements within the scene. A high score corresponds to a composition clearly organized around perceptible vanishing lines; a low score indicates the absence or invisibility of any structuring perspective.
+
+Examples of scoring:
+- 0: No visible vanishing lines; the scene is not constructed according to a logic of perspective.
+- 50: A slight perspective is suggested, but the lines are discreet or secondary in the interpretation of the image.
+- 100: The image relies heavily on clear converging lines (road, corridor, rails, etc.), organizing the viewer's gaze and reinforcing depth."
+13,Aspect Ratio,Composition,Radio,"Square, Horizontal, Vertical","Choosing between square, horizontal, or vertical formats affects the perception and reading speed of the image.","Choosing between 'Square', 'Horizontal', or 'Vertical' formats affects the perception and reading speed of the image; Felt on the image format.
+Score type: text.","This parameter identifies the dominant visual format of the image, based on the ratio between the height and width of the frame. An image can be square (1:1 ratio), horizontal (wider than it is tall), or vertical (taller than it is wide). This choice influences the perception of the image, the flow of the viewer's gaze, and sometimes the relationship between the subject and its surroundings. The aim is not to judge the format used, but to recognize it for what it expresses in terms of visual composition.
+
+Possible options:
+– Square: The frame is as tall as it is wide, often used for symmetrical, centered, or graphic compositions.
+
+– Horizontal: The frame is wider than it is tall; promotes a panoramic or expansive view of the scene.
+
+– Vertical: The frame is taller than it is wide; often used for portraits or to emphasize upward movement."
+14,Line Direction,Composition,List,"Horizontal, Oblique, Curved, Vertical, None","Horizontal lines inspire calm and stability, oblique lines dynamism and instability, and curved lines softness and soothing, vertical","Choose from 'Horizontal', 'Oblique', 'Curved', and 'Vertical'. Multiple choices may apply.
+Horizontal lines inspire calm and stability, oblique lines dynamism and instability, and curved lines softness and soothing, vertical.
+Score type: text.","This parameter describes the dominant directions of the lines visible in the image, identifying their role in the overall visual composition. These can be horizontal lines (stability, calm), vertical lines (elevation, tension), oblique lines (dynamism, imbalance), or curved lines (fluidity, softness). Several types of lines can coexist, but only those that truly structure the composition should be retained.
+
+Possible choices:
+– Horizontal: Lines parallel to the horizon, evoking stability, rest, or static equilibrium.
+
+– Vertical: Ascending or descending lines, emphasizing height, tension, or authority.
+
+– Oblique: Inclined or diagonal lines, creating a dynamic of movement, instability, or visual tension.
+
+– Curved: Rounded, sinuous, or soft lines, generating a feeling of fluidity, organic quality, or calm.
+
+– None: No dominant line type is identifiable or structuring in the composition."
+15,Implied Lines,Composition,Score,"No, Yes",Lines that are not explicitly drawn but are suggested by the composition or the subject's gaze.,"Lines that are not explicitly drawn but are suggested by the composition or the subject's gaze.
+Does the image have suggested lines?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","# 🧠 Prompt Optimized – Detection and Evaluation of Implicit Lines
+
+## 🎭 Role
+
+You are a **photo critic specializing in visual composition**, focusing on identifying **implicit lines**: those invisible yet perceptible alignments that guide the viewer's gaze and structure the interpretation of an image.
+
+---
+
+## 🎯 Objective
+
+Identify, describe, and evaluate the quality of **implicit lines** present in the photograph, that is:
+
+* The **undrawn visual connections** between elements of the image.
+
+* The **perceived** paths that **guide the viewer's gaze** or **structure the composition**.
+
+* The **graphic or directional** lines that are **not based on visible physical features**.
+
+---
+
+## ⚠️ Clear Definition
+
+An **implicit line** is an **invisible perceptual connection** formed by:
+
+* A subject's **gaze**, **gesture**, or **posture**.
+
+* The **alignment** or **repetition** of **visually separated** objects.
+
+* The **spatial symmetry** between several elements.
+
+* The **rhythm** between distinct shapes, **color areas**, or **light values**.
+
+* Frozen** or **anticipated** movement (jump, flight, momentum, etc.).
+
+> It must **connect at least two distinct visual points**, create a **perceptual flow**, and **actively participate in the composition**.
+
+> It is **not drawn or materialized** (no wire, bar, edge, or linear physical object).
+
+---
+
+## ❌ What is not an implicit line
+
+Systematically rejects:
+
+* **Visible lines**: wires, walls, edges, bars, structures, architecture.
+
+* **Internal patterns** within an object (stripes, grooves, wood grain, branches, repetitive facade).
+
+* The **symmetry or axis of a single object**.
+
+* **Isolated gazes** without a focal point.
+
+* Repetitions without perceptual connection (e.g., scattered birds without rhythm or direction).
+
+* Any structure **that plays no active role in reading or storytelling**.
+
+--
+
+## 📏 Evaluation Criteria
+
+Ask yourself these 3 questions:
+
+1. Are one or more **coherent implicit lines** perceptible?
+
+2. Do these lines **actually guide the eye**?
+
+3. Do they contribute to a **clear, balanced, meaningful composition**?
+
+---
+
+## 🧮 Rating
+
+**0** = No perceptible implicit lines.
+**30–50** = Weak or partial implicit lines, with little structural impact.
+
+**60–75** = Visible and clear implicit lines, contributing to readability.
+
+**80–100** = Strong implicit lines, central to the composition, well-integrated, fluid, coherent, and graphic.
+
+---
+
+## ✅ Response Format
+
+Submit your assessment **in JSON**, in this format:
+
+```json
+{
+""score"": [number between 0 and 100],
+
+""comment"": ""[Clear, concise, reasoned analysis of the implicit lines detected]""
+
+}
+```
+
+---
+
+## 📷 Corrected Examples
+
+❌ Poor Case — Score: 0/100
+A bird perched on a wire.
+
+➤ The wire is a visible line. No other element creates an implicit link.
+
+❌ Overinterpreted Case — Score: 0/100
+A wavy facade with rhythmic balconies.
+
+➤ These are internal patterns, with no link between distinct elements.
+
+✅ Strong Case — Score: 90/100
+Two people looking at a common point, directed posture, objects aligned diagonally.
+
+➤ An obvious, directional, fluid, central, implicit line in the composition."
+16,Light Reflection,Composition,Score,"No, Yes",Effects produced by light reflected or refracted by surfaces or materials in the scene.,"Effects produced by light reflected or refracted by surfaces or materials in the scene.
+Does the image contain any reflections or refraction of light?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the visual impact of lighting effects related to reflection or refraction on surfaces within the image. It identifies direct reflections (glass, mirrors, water), glare on shiny materials, and optical distortions caused by light passing through or bouncing off specific surfaces. The score reflects not only the presence of these phenomena but also their visible role in the image's composition or atmosphere.
+
+Examples of scoring:
+- 0: No reflective surfaces or optical effects are visible; light is diffused or absorbed without noticeable reflection.
+- 50: One or more reflections are present (shiny surface, partial glare), but they do not dominate the visual experience.
+- 100: The image relies heavily on reflected or refracted light: significant reflections, dominant optical effects, and an atmosphere built around reflection."
+17,Point of Light,Composition,Score,"No, Yes",Bright elements or points of strong light that naturally capture attention.,"Bright elements or points of strong light that naturally capture attention.
+Does the image have a bright spot?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the presence of one or more clearly visible points of light in the image, whether they are direct sources (streetlights, sunlight, light bulbs), localized halos of light, or areas of high light intensity that immediately draw the eye. The score reflects both the visibility and the perceptual power of these light elements, as focal points or visual accents. This criterion does not concern overall exposure, but rather localized points that have a graphic or narrative role.
+
+Examples of scoring:
+- 0: No visible light source is identifiable in the image; the lighting is diffuse or indirect.
+- 50: A point of light is present, perceptible but discreet, or integrated into the scene without dominating the composition.
+- 100: One or more highly visible points of light focus the viewer's gaze, becoming dominant elements in the interpretation of the image."
+18,Soft Focus,Composition,Score,"No, Yes",Mist or blur effect that reduces contrast and adds a touch of mystery or softness to the image.,"Does the image display a soft focus effect, characterized by a gentle blur and lowered contrast, which imbues the scene with an mystical, ethereal or dreamlike quality? This effect should not be mistaken for depth of field, which is related to the sharpness of certain areas in relation to the background or foreground.
+Value of 0: There is no discernible soft focus effect present in the image;
+At 100: The image prominently features a soft focus effect throughout, contributing significantly to its mood and style.
+Score type: continuous score between 0 and 100.","This parameter measures the presence of a subtle, overall soft blur, accompanied by reduced contrast, which gives the image a gentle, hazy, or even dreamlike atmosphere. This visual effect is often used to evoke a sense of nostalgia, mystery, or timelessness. It should not be confused with depth of field, which relates to the relative sharpness between the subject and its surroundings, nor with accidental or technical blur.
+
+Examples of ratings:
+- 0: The image is perfectly sharp, with normal contrast, and no perceptible soft blur.
+
+- 50: A slight blur is visible; the edges are softened, and the atmosphere begins to take on a softer tone without completely compromising clarity.
+
+- 100: The image clearly relies on a generalized soft blur; the atmosphere is very hazy or ethereal, with blurred edges and significantly reduced contrast."
+19,Scale and Proportion,Composition,Score,"No, Yes","The size relationship between different elements in an image can be used to create perspective, emphasize relative importance, or induce certain emotions in the viewer.","The size relationship between different elements in an image can be used to create perspective, emphasize relative importance, or induce certain emotions in the viewer.
+Does the image affect the size of the different elements that compose it?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the extent to which the image uses size relationships between elements to structure the scene, suggest perspective, or produce an effect of emphasis or disproportion. Scale can highlight the relative importance of a subject, create tension between proximity and distance, or evoke emotion by altering our visual reference points. The score does not reflect the natural presence of objects of different sizes, but rather their intentional use in the composition.
+
+Examples of scoring:
+– 0: The sizes of the elements are consistent and play no particular role in the visual or narrative construction.
+
+– 50: A difference in size is perceptible between nearby subjects, creating a visual hierarchy, without being exaggerated.
+
+– 100: The image clearly relies on an unusual or exaggerated scale: striking contrast in size, forced perspective effect, or disproportion used to dramatize or symbolize."
+20,Pattern Repetition,Composition,Score,"No, Yes","The repetition of similar elements (shape, color, pattern) across the composition to create visual movement or harmony.","The repetition of similar elements (shape, color, pattern) across the composition to create visual movement or harmony.
+Does the image contain a repetition of similar elements of shape, color or pattern?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the visible use of repetitive patterns in the image composition. These patterns can involve similar shapes, colors, or objects, arranged to create a perceptible visual rhythm, harmony, or dynamic. Repetition can be regular or slightly varied, as long as it remains clearly legible and plays a role in structuring the image. This criterion does not consider isolated similarities without any logical arrangement.
+
+Examples of scoring:
+- 0: No repeated patterns or elements are perceptible; the scene is visually heterogeneous.
+- 50: A few similar elements are present, and their repetition creates a rudimentary structure or rhythm in the image.
+- 100: The composition is clearly organized around strong visual repetition: regular sequences, aligned patterns, or dominant repetitive structures."
+21,Color Harmony,Composition,Score,"No, Yes",Combine complementary or analogous colors to enhance aesthetics.,"Does the image include harmonious or complementary colors?
+Value of 0: No;
+At 100: Yes.
+Score type: continuous score between 0 and 100.","This parameter measures the visual coherence and chromatic compatibility between the colors present in the image. Harmony can arise from complementarity (colors opposite each other on the color wheel), analogy (nearby colors), or a subtle balance between hues, tones, and saturations. A high score corresponds to a palette perceived as fluid, coherent, or aesthetically well-controlled; a low score reflects visual dissonance, a lack of color structure, or a perceptual incompatibility between colors.
+
+Examples of scoring:
+- 0: The colors are discordant, garish, or disjointed, without any apparent visual logic.
+- 50: Some colors harmonize well, but the palette remains partially unbalanced or incomplete.
+- 100: The colors are harmoniously distributed, with a coherent and visually pleasing palette based on a clear chromatic relationship."
+22,Location Setting,Composition,Radio,"Indoors, Outdoors, Non-applicable",Is the photo taken indoors or outdoors?,"Does the photo have an indoor or outdoor setting?
+Choose the right option from the list below:
+[‘Indoors’, ‘Outdoors’, ‘Non-applicable’]
+Score type: Text.","This parameter identifies whether the photographed scene is located in an indoor, outdoor, or indeterminate space. An indoor location refers to an enclosed or covered space (room, building, architectural structure). An outdoor location corresponds to an open environment (natural, urban, public). The ""Not applicable"" category is used when the image has no clear spatial clues to determine its context (plain background, abstraction, generated or composite image).
+
+Possible options:
+
+– Indoor: The scene is clearly captured in an enclosed space (room, hall, tunnel, etc.).
+
+– Outdoor: The image shows an open or exposed space (street, forest, square, etc.).
+
+– Not applicable: No element allows for a conclusion (neutral background, isolated studio, virtual or abstract space)."
+23,Rule of thirds,Framing,Boolean,Does the framing of the image use the Rule of Thirds?,"Divides the image into thirds both horizontally and vertically, placing subjects at the intersections or along the lines.","Divides the image into thirds both horizontally and vertically, placing subjects at the intersections or along the lines.
+Does the training of the image use the Rule of Thirds?
+Score type: Boolean.","You are an experienced photography teacher reviewing a student's image. The photo is already displayed with a superimposed 3×3 grid, similar to the ""rule of thirds.""
+
+Your task:
+1. Identify the subject: In one short sentence, state what you consider to be the main subject or dominant visual element (e.g., ""a French bulldog in a hoodie,"" ""a red kayak on turquoise water,"" ""the city skyline"").
+
+2. Remind them of the rule: The rule of thirds places important subjects or horizon lines along the vertical or horizontal lines of the grid or at one of the four intersections. Proper application generally means that the subject's focal point is located approximately one-ninth of the frame (≈ ±10% of the width/height) from a grid line or intersection.
+
+3. Room for interpretation: a slight misalignment or intentional creativity. The discrepancy can still be considered if the image appears clearly balanced according to the rule of thirds. However, a subject placed in the center, close to an edge, or without discernible alignment should be considered a failure.
+
+4. Decide – After weighing the pros and cons of the artistic intention, display only:
+
+true: if the placement credibly adheres to the rule (including acceptable tolerance and artistic leeway); or
+
+false: if it does not.
+
+Additional details:
+
+- To assist you in this task, the two horizontal and two vertical lines dividing the image into thirds are drawn on the photograph.
+
+- Scoring type: Boolean (consider ""true"" only if the main subject is primarily and clearly located on a grid intersection or line; exceptionally, ""true"" may be awarded if the subject is very close to an intersection or line, constitutes the clear focal point in an empty or minimal frame, and shows obvious compositional intent).
+
+- Main subject definition: The largest and most prominent object or person in the frame.
+
+- Clarify scope: Evaluate only the main subject and mention secondary elements only if they are also clearly aligned with a grid line or intersection.
+
+- Positional language: Explicitly state which grid intersection(s) or line(s) the subject aligns with (e.g., ""intersection top right,"" ""vertical left line"").
+
+- Handling near misses: If the subject is close but not clearly on an intersection or line, specify the distance, explain the visual impact, and indicate whether contextual factors (focus, empty space, intention) justify a ""true"" misalignment despite a slight offset.
+
+- Visual annotation reference: Explicitly reference the visual rule of thirds provided when describing the alignment or misalignment.
+
+- Provide a very concise (no more than a few sentences) but detailed explanation of how the elements do (or do not) conform to this rule, with precise positional references, a justification based on the visual context if relevant, and a strict but considered standard for what is deemed compliant."
+24,Golden Rectangles,Framing,Boolean,Does the image framing use The Golden Rectangle?,It involves dividing the frame into rectangles with proportions adhering to the golden ratio and placing key elements within these rectangles to achieve aesthetically pleasing compositions,"It involves dividing the frame into rectangles with proportions adhering to the golden ratio and placing key elements within these rectangles to achieve aesthetically pleasing compositions.
+Does the image framing use The Golden Rectangle?
+Score type: Boolean.","This parameter identifies whether the image composition relies on the use of rectangles proportioned according to the golden ratio (approximately 1.618), often called golden rectangles. These proportions can structure the frame or guide the placement of key visual elements. The presence of this construction should be perceptible in the overall layout of the image: precise asymmetrical balance, gradual interlocking, or fluid alignment according to these ratios.
+
+Examples:
+– True: The subject or main visual masses follow golden divisions, or are clearly contained within a perceptible golden spiral or frame.
+
+– False: The image is well-framed but does not adhere to an identifiable golden ratio; the placement of elements appears arbitrary or based on another logic (rule of thirds, centering, etc.)."
+25,Golden Spiral,Framing,Boolean,Does the framing of the image use The Golden Spiral?,"Positions elements along a spiral based on the Fibonacci sequence, naturally guiding the eye.","Positioning elements along a spiral based on the Fibonacci sequence, naturally guiding the eye.
+Does the framing of the image use The Golden Spiral?
+Score type: Boolean.","This parameter identifies whether the image composition follows the logic of a golden spiral, also known as a Fibonacci spiral: a logarithmic curve that gradually guides the eye toward a central or peripheral focal point. This construction relies on proportions related to the golden ratio, with visual elements strategically placed along the spiral or at its inflection points. This criterion only considers cases where the image's visual structure clearly corresponds to this spiral pattern.
+
+Examples:
+– True: The visual shapes, masses, or lines are organized around a perceptible spiral, which naturally leads the eye in a progressive movement toward a center or key point.
+
+– False: The image contains curves or spirals, but without a clear alignment with a golden spiral; the visual dynamic does not follow this precise flow."
+26,Diagonal Leading Lines,Framing,Boolean,Does the image framing use the Diagonal?,Employs diagonal lines to create movement and direct attention.,"Employing diagonal lines to create movement and direct attention.
+Does the image framing use the Diagonal?
+Score type: Boolean.","This parameter identifies whether the image composition relies on the use of perceptible diagonal lines to structure space, suggest movement, or guide the viewer's attention. These diagonals can be formed by objects, architectural elements, shadows, or visual alignments, provided they play an active role in the interpretation of the image. This criterion only applies if the diagonal lines are visually dominant and contribute to the perceptual organization of the scene.
+
+Examples:
+– True: A staircase ascending at an angle, a diagonal road intersecting the image, or an obliquely oriented object creating directional tension.
+
+– False: Slightly inclined but non-structuring lines, or diagonal elements not perceived as visual guides."
+27,Golden Triangles,Framing,Boolean,Does the image framing use the Golden Triangle?,Divides the image into triangles to energize the composition with inclined lines.,"Dividing the image into triangles to energize the composition with inclined lines.
+Does the image framing use the Golden Triangles?
+Score type: Boolean.","This parameter identifies whether the image composition is organized according to the principle of golden triangles: an implicit division of the frame into slanted triangles, designed to energize the scene through well-distributed oblique lines. This structure relies on diagonal lines that divide the space into triangular sections, within which key visual elements are placed or aligned. This criterion only applies to images where this geometry is perceptible in the overall organization, and not simply the presence of triangular shapes in the subject.
+
+Examples:
+– True: The subject or several visual masses are part of an oblique composition where the frame can be mentally divided into coherent triangles.
+
+– False: The image contains triangular elements or oblique lines, but without a perceptible structure based on a triangular division of the frame."
+28,Symmetrical Balance,Framing,Boolean,Does the image framing use Symmetry?,Balances the elements of the image to create visual harmony through mirroring.,"Balancing the elements of the image to create visual harmony through mirroring.
+Does the image framing use Symmetry?
+Score type: Boolean.","This parameter identifies whether the image is based on clear visual symmetry, where elements are arranged to reflect each other on either side of a central axis (vertical, horizontal, or diagonal). This can be true symmetry (mirror image) or a very similar distribution between the two halves of the image. This criterion only applies if this symmetrical organization actively structures the composition, and not in cases of simple overall balance without reflection or apparent duplication.
+
+Examples:
+– True: The image shows frontal symmetry (e.g., centered facade, reflection in water, mirrored portrait), with a balanced alignment of elements on either side of an axis.
+
+– False: The image is well-balanced, but without symmetrical construction; the elements are not reflected or distributed equally."
+29,Framing Viewer,Framing,Radio,"Rule of Thirds, Golden Rectangles, Golden Spiral, Center, Diagonal Leading Lines, Golden Triangles, Symmetrical Balance, None",Indicates the type of framing seen by the viewer.,"Indicates the type of framing seen by the viewer.
+Choose only one of the framing types from list below:
+Rule of Thirds, Golden Rectangles, Golden Spiral, Diagonal Leading Lines, Golden Triangles, Symmetrical Balance, None.","This parameter identifies the dominant structural framing used in the image, based on classical compositional principles. It determines the geometric or perceptual logic that organizes the arrangement of visual elements: grids, spirals, leading lines, axes of symmetry, etc. The choice should be based on the most clearly identifiable pattern, even if others are present in a secondary role.
+
+Possible options:
+– Rule of Thirds: The composition follows a grid of horizontal and vertical thirds, with the subject or key elements placed on the lines or intersections.
+
+– Golden Rectangles: The scene is organized around rectangles with golden proportions, suggesting a balanced mathematical structure.
+
+– Golden Spiral: The image follows a curved and progressive visual flow, guiding the eye along the Fibonacci spiral.
+
+– Diagonal Leading Lines: The composition is built on dominant oblique lines, directing the gaze and adding dynamism to the scene.
+
+– Golden Triangles: The image is structured with slanted triangles, creating balanced tension.
+
+– Symmetrical Balance: The image exhibits strong visual symmetry, with a mirror effect or an equivalent distribution of mass.
+
+– Center: The subject is clearly placed in the center of the frame, without any dominant secondary geometric logic.
+
+– None: No structuring framing scheme is perceptible in the composition."
+30,Lens Flare,Lens Quality,Boolean,,Existence of lens flare in the photo.,"Is there lens flare in the photo?
+Score type: Boolean.","This setting detects unwanted light reflections generated by direct light sources entering the lens. These reflections can appear as halos, glare, colored spots, or diffuse streaks, often due to an unfavorable shooting angle or the absence of optical protection. It only evaluates the optical effects internal to the lens, not reflections present in the scene itself.
+
+Examples:
+– True: The image shows a light halo or diffuse spots from direct light in the frame or at the edge of the field of view.
+
+– False: No optical reflections are visible, or the reflections are from a mirror, a water surface, or a naturally reflective object in the scene.
+
+"
+31,Haze Impact,Lens Quality,Score,"No haze, Haze",The possibility of haze being present in the photo.,"Is there haze in the photo?
+Give your response as the probability of a haze being present in the photo.
+Score type: Continuous score between 0 and 100.","This parameter measures the likelihood of atmospheric haze being present in the image by evaluating visual cues such as reduced contrast, softening of distant shapes, and general light scattering. Perceptible haze manifests as a loss of sharpness in the background, a diffuse light haze, and a softening of colors or edges. The score reflects the degree of visual certainty that this effect is indeed due to haze, and not to optical blur or digital processing.
+
+Scoring examples:
+- 0: The image is sharp and contrasted across all planes, with no signs of haze or light scattering.
+- 50: A haze is perceptible in the distance, but the image remains clear; the effect is probable but moderate.
+- 100: The haze is clearly identifiable, impacts the perceived depth of field, and creates a generalized diffuse effect."
+32,Haze Presence,Lens Quality,Boolean,,"A fog-like, low-contrast cast that covers the entire image, often due to a dirty lens, filter, or internal lens elements. Haze reduces overall clarity and saturation, giving the scene a dull, faded look.","Look at the image, is there any part of the image where haze causes a reduction in clarity or makes that part of the image appear dull? If the haze results in a noticeable lack of sharpness, contrast, or color saturation in any section of the image, it should be considered as haze. Pay attention to areas that appear washed out, blurred, or foggy, which could indicate atmospheric haze affecting the image.
+Score type: Boolean.","This setting detects the presence of optical haze or unwanted haze affecting all or part of the image. This phenomenon manifests as a noticeable loss of clarity, saturation, or contrast, often perceived as a whitish cast, a washed-out appearance, or a diffuse blur. It can be caused by a dirty, fogged, or defective lens, or by an accumulation of optical residue. The effect must be visually perceptible and distinct from an intentional aesthetic style or a naturally hazy atmosphere.
+
+Examples:
+– True: Part of the image appears blurred, dull, or hazy in a way that is inconsistent with the scene; clarity and contrast are abnormally reduced.
+
+– False: The image is sharp and saturated, or the hazy appearance is clearly atmospheric or intentionally incorporated as an artistic effect."
+33,Dust Visibility,Lens Quality,Score,"No dust, Dust",Probability of dust visibility in the photo.,"Is there any dust visible in the photo?
+Provide your response as the probability of dust being present.
+Score type: Continuous score between 0 and 100.","This parameter assesses the likelihood that visible spots in the image are caused by dust on the sensor, lens, or filter. These marks typically appear as small, blurred, circular, or diffuse areas, particularly noticeable against uniform backgrounds such as the sky. The score reflects the probability that these marks are indeed dust particles, and not elements of the scene or artistic artifacts.
+
+Examples of scores:
+- 0: No dust is visible; the image is clean across all bright areas.
+- 50: One or two spots are visible, but their origin is uncertain; the probability is moderate.
+- 100: Obvious dust particles are present in several areas, clearly perceptible and not originating from the scene."
+34,Dust Existence,Lens Quality,Boolean,,"Small, dark spots or specks that appear in the same areas of multiple images, often caused by dust on the sensor or lens. These spots remain stationary across frames, typically visible against bright, uniform backgrounds.","Look at the image, is there any sign of a dusty or unclear lens? You should consider whether there are noticeable spots, streaks, or hazy areas across the image, which could indicate dirt, dust, or smudges on the lens. Pay attention to areas where light reflections might appear distorted or blurry, and assess if these inconsistencies affect the overall clarity and sharpness of the image.
+Score type: Boolean.","This setting detects the visible presence of dust, dirt, or smudges on the lens or sensor, manifesting as blurry, dark, or streaky areas in the image. These marks generally appear in bright or uniform areas and are not related to objects in the scene. They can locally distort light or impair sharpness. This criterion should only be validated if the image shows clear signs of optical contamination, and not simply normal variations in the background.
+
+Examples:
+– True: One or more dark spots are visible in fixed locations, with a blurring or distortion effect inconsistent with the scene being photographed.
+
+– False: No fixed or inconsistent marks are perceptible; sharpness and clarity are uniform across the entire image."
+35,Fringe,Lens Quality,Boolean,Is True if Chromatic Aberration is happened in the image.,"A colored border, typically green or magenta, visible around high-contrast edges in an image. This occurs due to the lens’s inability to focus all wavelengths of light at the same point.","Detecting chromatic aberration in an image by examining high-contrast edges for unnatural color fringes.
+Does the image display chromatic aberration around sharp transitions between dark and bright areas?
+Score type: Boolean.","This parameter detects the presence of chromatic aberration in the image, generally perceptible as fine colored fringes (purple, green, magenta, etc.) located along high-contrast edges. This optical phenomenon results from the difficulty some lenses have in focusing all wavelengths of light to the same point. Only fringes visible in the sharp transition zones between light and dark areas should be considered, not artistic effects or natural reflections.
+
+Examples:
+– True: Artificial colored fringes appear around the edges of a building against a sky background, or on the sharp outlines of a brightly lit subject.
+
+– False: The outlines are sharp and natural, without unwanted color; the color variations are an integral part of the scene or lighting."
+36,Starburst,Lens Quality,Boolean,Is True if Starburst light effect is happened in the image.,"A distinctive pattern of radiating lines or “spokes” around bright point light sources, resulting in a star-like flare. This often occurs when shooting into lights such as street lamps, and is influenced by the aperture shape and lens design.","Symmetrical radiating lines or “spokes” around bright point light sources, influenced by lens aperture and design.
+Does the image show a starburst effect with sharp, linear rays emanating from bright light sources?
+Score type: Boolean.","This setting identifies the presence of a starburst effect, visible as sharp, linear beams of light emanating from a point light source (e.g., sun, lamp, spotlight). This symmetrical pattern is caused by the diffraction of light through the diaphragm blades, often amplified at small apertures. It should be clearly distinguishable from diffuse halos or optical flares and only applies to images where these beams form a perceptible starburst pattern.
+
+Examples:
+– True: A streetlamp at night generates regular, star-shaped beams of light; filtered sunlight produces a well-defined geometric burst.
+
+– False: The light is diffuse, without structured radiation; the image contains a flare, halo, or overexposure without a starburst pattern."
+37,Moire,Lens Quality,Boolean,,"A wavy or repetitive interference pattern that appears when the camera’s sensor sampling interacts with fine, repetitive textures, such as fabrics or screens. The result is a shimmering, rainbow-like or grid-like distortion that was not present in the original subject.","Carefully analyze the image for any signs of moiré patterns. Moiré patterns are optical artifacts caused by interference between fine, repetitive textures (e.g., fabrics with tight weaves, striped patterns, or blinds) and the digital sensor grid. These artifacts may appear as:
+
+1.Wavy or rippling distortions.
+2.Rainbow-like color artifacts.
+3.A shimmering or unnatural texture appearance in areas with high-frequency details.
+Pay particular attention to areas with fine patterns, such as clothing fabrics, blinds, or screens, even if the distortion is subtle or localized.
+
+If any distortions or interference artifacts are present, return True.
+If the image appears entirely natural and smooth, with no interference, return False.
+Score type: Boolean.","This parameter detects the presence of moiré patterns in the image, which are optical artifacts generated by the interference between fine, repetitive textures (fabrics, stripes, grids, screens, etc.) and the digital sensor grid. Moiré manifests as wavy distortions, halftone effects, rainbow-like colored artifacts, or an abnormal shimmering texture. These anomalies often appear in areas with high spatial frequencies, even if subtle or localized.
+
+Examples:
+– True: A finely patterned fabric produces colored waves; a screen displays an unstable or shimmering grid; a repetitive texture creates unnatural visual waves.
+
+– False: The patterns remain sharp and regular without distortion; no color alteration or artificial shimmering is visible in the fine areas."
+38,ColorMode,Color,Boolean,Is true if the image is in black and white.,Indicates whether the image is in color or black and white.,"Indicates whether the image is in color or black and white.
+Is True if the image is in black and white. If it is in color, the value is False.
+Score type: Boolean.","This parameter identifies whether the image is black and white or color. An image is considered black and white only if no color information is present: all pixels must be pure grayscale, without any color tint. Desaturated styles, colored monochrome filters (e.g., sepia, cyanotype), or limited palettes remain color images, even if they appear visually muted.
+
+Examples:
+– True: The image contains only shades of gray, without any trace of color or color tone.
+
+– False: The image contains one or more tints, even subtle ones (soft yellow, pastel blue, vintage filter), or exhibits partial desaturation."
+39,Hue,Color,List,"Yellow, Amber, Orange, Vermillion, Red, Magenta, Purple, Violet, Blue, Teal, Green, Chartreuse","Hue refers to the specific color or shade, dominant in an image. It's the attribute that determines the color itself, like red, blue, or yellow, without affecting brightness or contrast.","Hue refers to the specific color or shade, dominant in an image. It's the attribute that determines the color itself, like red, blue, or yellow, without affecting brightness or contrast.
+What is the dominant color of the image?
+Choose from the following list (multiple colors may apply as dominant):
+[""Yellow"", ""Amber"", ""Orange"", ""Vermillion"", ""Red"", ""Magenta"", ""Purple"", ""Violet"", ""Blue"", ""Teal"", ""Green"", ""Chartreuse""]
+Only choose from the above list. Do not include any other colors in your response. For example, you should not include white, black, gray or brown in your response.
+Score type: text.","This parameter identifies the dominant hues present in the image, based on perceived color, regardless of brightness or contrast. A hue here refers to a primary chromatic color (red, blue, green, etc.) and not a shade of gray, black, or white.
+
+The image can contain a single dominant color, or up to a maximum of three colors, each with an estimated percentage of visual dominance. These percentages should reflect the perceived visual proportion in the image and total approximately 100%.
+
+A suggested list of typical hues is provided below, but you can include others if they are clearly dominant in the image:
+
+""Yellow"", ""Amber"", ""Orange"", ""Vermilion"", ""Red"", ""Magenta"", ""Purple"", ""Blue"", ""Teal"", ""Green"", ""Chartreuse""
+
+Do not include neutral colors (black, white, gray, brown), even if they occupy a significant area.
+
+Expected output format:
+A list of 1 to 3 colors maximum, each with an approximate percentage (e.g., ""Blue"" 70%, ""Orange"" 30%).
+
+Examples:
+- ""Blue"" 100%: Uniformly bluish image (sky, background, atmosphere).
+
+- ""Red"" 60%, ""Orange"" 40%: Image with warm tones distributed between two closely related ranges.
+
+- ""Green"" 60%, ""Teal"" 25%, ""Chartreuse"" 15%: Natural landscape blending several dominant plant colors."
+40,Luminosity,Color,Score,"Dark, Bright","Luminosity refers to the brightness or light intensity of an image. It determines how light or dark the colors appear, without changing their hue or saturation.","Luminosity refers to the brightness or light intensity of an image. It determines how light or dark the colors appear, without changing their hue or saturation.
+Value of 0: The colors of the image are predominantly dark;
+At 100: The colors of the images are very bright.
+Score type: continuous score between 0 and 100.","# 🧠 Prompt AI — Brightness Assessment (v1.2 enhanced)
+
+## 🎭 ROLE
+
+You are an AI specializing in photographic analysis. Your task is to assess the **overall brightness** of an image. This does not concern technical exposure or the directional quality of light, but only the **overall perceived brightness**.
+
+---
+
+## 🧪 3-STEP METHOD
+
+1. **Blurred Reading (optional but recommended)**: Start by analyzing a heavily blurred version of the image to neutralize details and estimate the perceived average brightness.
+
+2. **Observing Dominant Areas**: Identify the relative proportion of light and dark areas in the image.
+
+3. **Rating on the Brightness Scale**: Assign a score between 0 and 100 based on the overall visual balance.
+
+---
+
+## 📊 RATING GUIDELINES
+
+| Overall Lighting | Light Dominance | Extensive Dark Areas | Indicative Rating |
+
+| ---------------- | ---------------- | ---------------------- | --------------- |
+
+| Very High | Yes | No | 85–100 |
+
+| Moderate Light | Yes | Low | 65–80 |
+
+| Balanced | Balanced | Balanced | 45–60 |
+
+| Low | Low | Dominant | 20–40 |
+
+| Very Dark | No | Yes | 0–20 |
+
+---
+
+## 🌐 EXTREME BLUR READING (optional but recommended)
+
+This method allows you to:
+
+* neutralize the influence of local details and fine contrasts,
+* reproduce a **perceptual average of overall illumination**,
+* mimic how a photographer assesses the clarity of an image at first glance.
+
+👉 Recommended **especially in cases with high dynamic range** (e.g., nighttime urban scenes, dark staircases with spot lighting).
+
+---
+
+## 🎯 PARAMETER PURPOSE: Brightness (Parameter 40)
+
+Brightness **corresponds to the perceived light intensity on an overall scale. An image can be:
+
+* dark (low key),
+* balanced,
+* bright (high key).
+
+⚠️ This criterion does not judge **technical exposure** (blocked or blown-out areas), **light direction**, or **contrast**. It only considers the **overall impression of illumination**.
+
+---
+
+## 🔢 RATING SCALE
+
+* `0–15`: Near total darkness (night scene with no light source)
+* `20–35`: Controlled dark atmosphere (low key)
+* `40–55`: Natural lighting, visual balance
+* `60–75`: Bright image, perception of openness or clarity
+* `80–100`: High key or extremely bright atmosphere
+
+📌 A very dark image can receive a low rating without this calling into question its quality — **the rating does not evaluate artistic intention or achievement.**
+
+---
+
+## ❌ MISTAKES TO AVOID
+
+* Do not confuse **overall brightness** and **exposure quality**.
+
+* Do not be misled by locally bright areas or vivid colors.
+
+* Do not overestimate the light based on isolated or point reflections.
+
+---
+
+## 🧠 EXPECTED OUTPUT (JSON)
+
+```json
+{
+""parameter"": ""Brightness"",
+
+""score"": 50,
+
+""explanation"": ""The image has soft, even lighting. There are no very dark areas or overexposed areas. The overall impression of brightness is balanced.""
+
+}
+```
+
+---
+
+## 🧪 EXAMPLES (A to L)
+
+**Image A:** Clear chiaroscuro portrait ➜ `Brightness = 30`
+
+**Image B:** Very bright scene with a clear sky and white elements, in a high-key style ➜ `Brightness = 80`
+
+**Image C:** Balanced photo, homogeneous diffused light ➜ `Brightness = 50`
+
+**Image D:** White snake on a light background, natural light ➜ `Brightness = 90`
+
+**Image E:** Textured white wall, brightly lit ➜ `Brightness = 95`
+
+**Image F:** Metal keys on a very dark interior background ➜ `Brightness = 20`
+
+**Image G:** Chiaroscuro portrait with a black background ➜ `Brightness = 30`
+
+**Image H:** Book in soft light on stone ➜ `Brightness = 55`
+
+**Image I:** Dark stairs with light at the top ➜ `Brightness = 40`
+
+**Image J:** Night skyline, spotlight on buildings ➜ `Brightness = 45`
+
+➡️ These examples cover a full range of situations, from extreme low key to diffuse high key, and include cases with high dynamic range. (D to L) will enrich this section based on tests conducted.
+
+---
+
+## 📚 TYPICAL GUIDELINES ACCORDING TO VISUAL STYLES
+
+| Photographic Intention | Expected Brightness | Exposure (Out of Scope) |
+
+| --------------------------- | ------------------- | ----------------------- |
+
+| Low key (dark intention) | 15–35 | Can be well exposed |
+
+| Balanced / Neutral | 40–60 | Standard reading |
+
+| High key (clear intention) | 70–95 | May be well exposed |
+
+> 💡 **Note:** These guidelines are used to situate the **brightness** within a visual intention. They do not indicate whether the image is well or poorly exposed."
+41,Saturation,Color,Score,"Desaturated, Saturated","Saturation refers to the intensity or purity of a color in an image. Higher saturation means more vivid, richer colors, while lower saturation results in more muted or greyish tones.","Saturation refers to the intensity or purity of a color in an image. Higher saturation means more vivid, richer colors, while lower saturation results in more muted or greyish tones.
+Value of 0: The colors of the image are completely desaturated (black and white image);
+At 100: The colors of the images are extremely saturated.
+Score type: continuous score between 0 and 100.","This parameter measures the image's saturation level, that is, the intensity or purity of the perceived colors. High saturation results in rich, vibrant, and dense hues; low saturation produces more muted, subdued, or grayish tones. This criterion does not take into account clarity or brightness: a color can be dark but highly saturated (deep red, midnight blue), or light and desaturated (pastel tones).
+
+Examples of ratings:
+- 0: The image is entirely black and white; no color is present.
+- 50: The colors are visible but moderate, neither dull nor vivid.
+- 100: The colors are intense, bold, and highly saturated, with a very strong visual impact."
+42,Exposure,Visual Opinion,Score,"Underexposed, Overexposed",Overall exposure of the image.,"The degree to which an image is exposed, focusing on the retention of detail in both highlights and shadows.
+Value of 50: The image is correctly exposed, with balanced detail in both highlights and shadows.
+Below 50: The image is underexposed, lacking detail in the shadows.
+Above 50: The image is overexposed, lacking detail in the highlights.
+Score type: Continuous score between 0 and 100.","# 🧠 Prompt AI — Exposure Assessment (v1.5)
+
+## 🎭 ROLE
+
+You are an **expert exposure photo critic**. You receive an image and must assess **its exposure quality**, that is, the balance between the captured light and the subject's legibility, regardless of the visual style.
+
+---
+
+## 🎯 PURPOSE OF THE SCORE (IMPORTANT)
+
+Assign an **absolute score out of 100** according to this scale:
+
+* `0` = Clearly **underexposed** image: very dark, lost information, illegible subject.
+
+* `50` = **Correct exposure**: legible image, preserved details, no blown-out or blocked-up areas.
+
+* `100` = Clearly **overexposed** image: blown-out areas, lost details, uncontrolled light.
+
+The rating must reflect **the degree of deviation from a neutral exposure**.
+
+---
+
+## 🔍 EVALUATION METHODOLOGY
+
+### 🧩 1. **Identify the visual style**
+
+Start by identifying the lighting intention among the following:
+
+* **High-key**: intentionally bright, white, soft, pastel image.
+
+* **Standard**: balanced image, moderate contrast, neutral lighting.
+
+* **Low-key**: dark, dramatic image, high contrast, black background.
+
+⚠️ **Don't confuse lighting style with exposure.** A well-executed low-key image can be correctly exposed, just like a well-executed high-key image.
+
+> ⚠ **Caution: an image can be underexposed even without blown-out or blocked-up areas.**
+>
+> * A **high-key** image without blown-out areas but too dull is **underexposed**.
+
+> * A low-key image without blocked-up areas but too bright is overexposed.
+
+> * **Exposure is judged within the context of the visual style.**
+
+### 🔦 2. **Exposure Analysis**
+
+Indicate whether the actual exposure of the image respects its stylistic intention. Consider the following:
+
+* **Is the subject clearly legible?** (even with visual blur)
+* **Are there any unjustified blown-out or blocked-up areas?**
+* **Does the contrast hinder the image's clarity?**
+* **Is the stylistic intention betrayed by poor exposure?**
+
+### 🎯 3. **How ​​to assign a rating?**
+
+#### Standard image
+
+* Good exposure → 50
+* A little dark → 30–45
+* Very dark / illegible → 0–25
+* A little too bright → 55–70
+* Blown-out / lost areas → 80–100
+
+#### High-key style
+
+* High-key well executed → 50
+* Overexposed, without Details → `70–100`
+* Not clear enough to be believable → `30–45`
+
+#### Low-key style
+
+* Legible, balanced low-key → `50`
+* Too blocked up, too dark → `0–30`
+* Not bold enough (neither light nor dark) → `40–45`
+
+---
+
+## 📝 OUTPUT FORMAT
+
+Respond in this JSON format:
+
+```json
+{
+""exposure_note"": 50,
+
+""explanation"": ""The image is in a controlled low-key style: the main subject remains legible, the blacks are deep without losing essential details. The exposure is intentionally dark but well-balanced, therefore correct.""
+
+}
+```
+
+---
+
+## 🛑 MISTAKES TO AVOID
+
+* ❌ Don't rely solely on **overall brightness**.
+
+* ❌ Don't overestimate a poorly executed high-key image.
+
+* ❌ Don't penalize a well-executed low-key image.
+
+* ❌ Don't rate relatively: an image should be worth **50 if it is correctly exposed** in its style.
+
+* ❌ Don't ignore the **visual style** simply because there are no blown-out/blocked-up areas.
+
+---
+
+## 📊 EXAMPLES OF RATINGS
+
+* `50`: Correct exposure (low-key, high-key, or standard well-executed).
+
+* `80–100`: Overexposed — blown-out areas, lost detail.
+
+* `0–30`: Underexposed — image too dark, subject illegible.
+
+* `35–45` or `55–70`: Slightly under/overexposed."
+43,Contrast,Visual Opinion,Score,"Soft, Hard",Difference between the darkest and lightest parts.,"Difference between the darkest and lightest parts: 0 to 100.
+Score type: continuous score between 0 and 100.","This parameter measures the degree of difference in brightness between the darkest and lightest parts of the image. High contrast produces a very sharp image, with deep blacks and bright whites, while low contrast results in a soft, veiled, or slightly hazy visual appearance. The score should reflect the overall intensity of the perceived contrast, regardless of color saturation or sharpness.
+
+Examples of scores:
+- 0: The image is very flat, with no sharp shadows or highlights; everything appears uniform.
+- 50: There is a noticeable difference between light and dark areas, but it is neither strong nor weak—a neutral visual balance.
+- 100: The extremes of light and dark are pushed to the maximum, with strong visual tension and sharp edges."
+44,Sharpness,Visual Opinion,Score,"Not sharp, Too sharp","Sharpness refers to the clarity and distinctness of an image'sdetails. It determines how well edges and fine details are defined, affecting the overall perceived crispness and focus of the photo.","Sharpness refers to the clarity and distinctness of an image's details. It determines how well edges and fine details are defined, affecting the overall perceived crispness and focus of the photo.
+Value of 0: The details of the image are not sharp;
+At 100: Image details too sharp (Clarity+)
+Score type: continuous score between 0 and 100.","Visual Acuity Score Not Sharp, Too Sharp Sharpness refers to the clarity and distinction of details in an image. It determines the quality of the definition of edges and fine details, affecting the overall perceived sharpness and focus of the photo. ""Sharpness refers to the clarity and distinction of details in an image. It determines the quality of the definition of edges and fine details, affecting the overall perceived sharpness and focus of the photo.
+Value of 0: Image details are not sharp;
+To 100: Image details are too sharp (Clarity+)
+Score type: continuous score between 0 and 100."""
+45,Digital noise,Visual Opinion,Score,"Not grain, Lot of grain","Digital noise refers to random, grainy specks in an image, often seen in low-light conditions or at high ISO settings. It can reduce image clarity and detail.","Digital noise refers to random, grainy specks in an image, often seen in low-light conditions or at high ISO settings. It can reduce image clarity and detail.
+Value of 0: The image does not present grain / digital noise;
+At 100: The image has a lot of grain / digital noise
+Score type: continuous score between 0 and 100.","# 🧠 Prompt AI — Noise/Digital Grain Assessment
+
+## 🎭 ROLE
+
+You are an **image critic specializing in the technical analysis of photographic rendering**, tasked with evaluating the **presence, nature, and visual impact of digital noise** in an image.
+
+---
+
+## 🤩 OBJECTIVE
+
+Evaluate the **quantity, visibility, and distribution of digital noise or grain**, understanding the **difference between digital noise (often colored, random) and aesthetic grain (often monochrome, regular)**. Both must be detected and rated according to their **actual visual presence**, whether unintentional or intentionally added.
+
+✳️ **Caution**: Development or post-processing can **intensify** existing grain (via contrast, clarity, black and white toning, etc.) or add more for aesthetic reasons. The analysis must always be done **visually**: note what is visible in the image, regardless of its origin or intention, understanding the **difference between digital noise (often colored, random) and aesthetic grain (often monochrome, regular)**. Both must be detected and noted according to their **actual visual presence**, whether unintentional or intentionally added.
+
+* **Monochrome** (luminance noise)
+* **Colored** (chromatic noise)
+* **Uniform** (diffuse noise across the entire image)
+* **Localized** (dark areas, blurred transitions, etc.)
+
+The goal is to determine whether this grain **impairs the image's legibility** or **serves a particular aesthetic**.
+
+---
+
+## 🧪 WHAT IT IS NOT
+
+* This is **not** an artistic evaluation of analog grain (intentional film grain).
+
+* This is **not** simply a blurry or soft interpretation: blur can mask noise, but it doesn't replace it.
+
+* This is **not** a sharpness assessment, although the two can interact.
+
+---
+
+## 📏 EVALUATION CRITERIA
+
+### 🧮 Perceived Grain Levels (Calibration Guide)
+
+* **0–10**: No grain, perfectly clean image.
+
+* **11–30**: Very subtle grain, visible only in certain areas (shadows, blurs), does not interfere with readability.
+
+* **31–60**: Moderate grain, generally visible, begins to affect fine textures without impairing readability.
+
+* **61–80**: Strong grain, impacted readability, noticeable roughness on faces and flat areas.
+
+* **81–100**: Excessive grain, noise effect, or major visual disturbance.
+
+1. **Presence**: Is the noise visible to the naked eye (in dark, blurry, uniform areas, or at the edges)?
+
+2. **Type of Noise**:
+
+* Luminance (black and white grain)
+* Chromatic (color blemishes)
+
+3. **Distribution**: Is it diffuse or concentrated? Does it affect certain key areas (faces, blurred backgrounds, dark areas)?
+
+4. **Perceived Impact**:
+
+* Does it impair the image's legibility?
+
+* Does it add aesthetic texture or is it a technical flaw?
+
+---
+
+## 🌀 SPECIAL CASES
+
+* **Irregular or Hybrid Exposure**: Some very dark or overexposed areas can visually mask or amplify the noise. The image should be interpreted accordingly.
+
+* **Blur/Noise Conflict**: Background blur doesn't always smooth the image. In many photos, noise is more visible precisely in the blurred areas, especially in the background. It then manifests as noticeable grain, a ""cracked"" or grainy effect.
+
+* **Added Grain in Post-Production**: Some images have grain intentionally added for aesthetic reasons. Even if this noise is intentional, it must be objectively evaluated based on its **perceived intensity**, its **distribution**, and its **visual impact**. The goal is not to judge the creative intent, but the **actual presence of grain**, whether natural, digital, or artistic.
+
+---
+
+## 🔎 READING TIP
+
+Perform an **overall blurred reading** to isolate the general structure of the image. If localized or grainy disturbances persist within this blur (even perceptually), this reinforces the presence of noise.
+
+---
+
+## 🧭 Contextual Use of EXIF ​​Metadata *(if available)*
+
+If EXIF ​​metadata is accessible, you can use it as a **contextual clue for interpretation**, but never consider it an automatic justification. In particular:
+
+* **High ISO** (>3200): Noise may be expected, but its acceptability must remain **visually assessed**.
+
+* **Sensor type** (e.g., smartphone, Micro Four Thirds, APS-C, full-frame, medium format): Can influence noise tolerance.
+
+* **Camera model or brand**: Some cameras apply automatic processing (smoothing, noise reduction) that must be taken into account.
+
+⚠️ **Caution**:
+
+* Never penalize an image for the absence of EXIF ​​data.
+
+* Do not **over-justify** poor quality based solely on EXIF ​​data.
+
+* This criterion should **never take precedence over direct visual analysis**.
+
+---
+
+## 🌟 SAMPLE RATINGS
+
+### 🎓 Calibration Examples (Added Grain)
+
+| Image | Description | Rating |
+
+| ------- | --------------------------------------------- | ---- |
+
+| Image 1 | Very light grain, overall clean image | 12 |
+
+| Image 2 | Moderate grain visible throughout but tolerable | 32 |
+
+| Image 3 | Heavy grain, starting to obscure details | 61 |
+
+| Image 4 | Very heavy grain, visual noise effect | 85 |
+
+* **Rating 0/100**: Very clean image, no visible grain even in sensitive areas.
+
+* **Rating 50/100**: Visible but controlled grain, light in dark areas, without hindering readability.
+
+* **Rating 100/100**: Very noisy image, colored spots in the shadows, obvious loss of detail."
+46,Light Source Viewer,Visual Opinion,List,"Ambient, Directed",Indicates whether the lighting is ambient or directed by the photographer from the viewer's point of view.,"Indicates whether the lighting is ambient and/or directed by the photographer from the viewer's point of view.
+Choose any of the following that apply (both and None can also be chosen): Ambient, Directed.
+Score type: text","This setting identifies, from the viewer's perspective, whether the light illuminating the scene appears ambient (uncontrolled) or directed by the photographer (controlled).
+
+– Ambient light refers to diffuse or natural lighting, such as daylight, indoor fluorescent lights, or streetlights, without any obvious signs of direction or shaping.
+
+– Directed light corresponds to a clearly controlled, focused, or oriented source (flash, spotlight, light sculpted onto the subject).
+
+– Both types can coexist if an ambient scene is complemented by a point light source.
+
+– The ""None"" category applies if no identifiable light source can be deduced from the image (e.g., flat rendering, abstraction, virtual lighting).
+
+Possible choices: ""Ambient"", ""Directed"", ""Ambient and Directed"", ""None"""
+47,Light Softness Viewer,Visual Opinion,Score,"Soft, Hard",Indicates the harshness of the lighting (not to be confused with the contrast of the image) evaluated by the viewer.,"Indicates the harshness of the lighting (not to be confused with the contrast of the image) evaluated by the viewer: Soft or Hard.
+Value of 0: Soft;
+At 100: The Hard.
+Score type: continuous score between 0 and 100.","This parameter measures the perceived harshness of the lighting in the image by analyzing how light shapes forms, shadows, and transitions. Soft light produces blurred shadows with soft edges and gradual transitions between light and shadow. Hard light creates sharp, defined shadows with sharp contours and pronounced modeling. This criterion should not be confused with the overall contrast of the image: it focuses solely on the directional quality and diffusion of light.
+
+Examples of ratings:
+- 0: Very diffuse light with no pronounced shadows; transitions are soft, as in cloudy or filtered light.
+
+- 50: The lighting exhibits both moderate shadows and soft edges.
+
+- 100: The light is very harsh: shadows are sharp and defined, and volumes are strongly sculpted by point sources."
+48,Color Temperature,Visual Opinion,Score,"Cold, Warm",Cold or warm rendering of the image.,"Cold or warm rendering of the image:
+Value of 0: The image is very cold (blue tones);
+At 100: The image is very warm (orange tones).
+Score type: continuous score between 0 and 100.","This parameter measures the perceived color temperature of the image, that is, the visual cast ranging from blue (cool) to orange (warm). A cool temperature results in a bluish, neutral, or slightly greenish cast, evoking cool, morning, or artificial light. A warm temperature produces an orange, gold, or reddish cast, associated with evening light, warmth, or an intimate atmosphere. This score reflects the overall tone of the image, regardless of its saturation or brightness.
+
+Examples of scores:
+- 0: The image has a strong blue or cyan cast, giving a cold or metallic feel.
+
+- 50: The colors are generally neutral, without a perceptible cool or warm cast.
+
+- 100: The image is very warm: orange, gold, and red hues, with an enveloping, luminous atmosphere."
+49,Visual Harmony,Visual Opinion,Score,"No, Extremely","The relationship between colors, shapes, and textures that creates a pleasing image to look at.","The relationship between colors, shapes, and textures that creates a pleasing image to look at.
+Is there a blatant visual harmony in the image between colors, shapes and/or textures?
+Value at 0: no;
+Value at 100: extremely.
+Score type: continuous score between 0 and 100.","This parameter measures the level of visual harmony in the image, that is, how colors, shapes, and textures interact to create an impression of coherence and balance. High harmony results in a fluid, visually pleasing composition in which no element appears dissonant or arbitrary. This criterion does not depend on a particular style, but rather on the perceived relationship between the visual components that structure the image.
+
+Examples of scoring:
+– 0: The image is visually chaotic, with no clear connection between shapes, textures, or colors; it gives an impression of disorder or incoherence.
+
+– 50: Some elements harmonize visually, while others appear less integrated; the image conveys partial harmony.
+
+– 100: The entire image forms a visually coherent whole, with a clear complementarity between textures, shapes, and colors."
+50,Sense of Motion,Visual Opinion,Score,"No movement, Lots of visible movement",Impression of movement or force.,"Impression of movement or force.
+Impression of movement rated from 0 (no movement) to 100 (lots of visible movement).
+Score type: continuous score between 0 and 100.","This parameter measures the intensity of perceived movement in the image. The movement can be real (a moving subject, motion blur, a dynamic pose), or simply suggested by lines of tension, an unbalanced composition, or an interrupted gesture. A still image can therefore convey a strong impression of movement if its visual structure clearly suggests dynamism. Conversely, a frozen or posed scene, without perceptible tension, will be considered static.
+
+Examples of the rating:
+- 0: The image is completely static, without a dynamic pose or composition suggesting movement.
+- 50: The image contains a subject whose pose suggests movement, or a slight visual tension that evokes imminent action.
+- 100: The movement is obvious: motion blur, a subject in mid-jump, or a visual effect that clearly draws the eye in a strong direction."
+51,Directional Lighting,Visual Opinion,Text,Information given by the user on light correction.,The direction from which light comes can create shadows that alter texture and shape.,"The direction from which light comes can create shadows that alter texture and shape.
+Information given by the user on light correction.
+Score type: text.","This parameter gathers a textual description of the direction of light perceived in the image. It indicates where the main light source appears to originate (e.g., left side light, zenithal light, backlighting, backlighting, etc.) and assesses its effect on the scene (creation of strong shadows, modeling of shapes, flattening, uniform lighting, etc.). This information can be used to correct or adjust the visual interpretation of the scene according to the perceived intention or desired effect.
+
+Examples of expected responses:
+
+– Right side light, creating sharp shadows on the face.
+
+– Soft zenithal lighting, little relief in the texture.
+
+– Strong backlighting, bright outlines and dark silhouette.
+
+– Direct frontal light, flattening of volumes."
+52,Overall Expert Assessment,Visual Opinion,Text,General feeling about the technical elements of the image.,Assessment of a photographer expert regarding the photograph,"Assessment of a photographer expert regarding the photograph.
+General feeling about the technical elements of the image.
+Score type: text.","This parameter gathers a general assessment from an expert photographer on the technical aspects of the image. The analysis may focus on exposure control, composition, sharpness, lighting quality, color rendering, or use of visual space. The comment should reflect a concise professional evaluation, without subjective judgment on the emotional or narrative content of the image.
+
+Examples of expected responses:
+
+– Good exposure control despite challenging lighting conditions; the composition is stable and well-structured.
+
+– Technically sound image, but slightly overexposed in the highlights; sharpness is precise.
+
+– Some sharpness issues in key areas, and slightly excessive contrast; overall, the image remains well-framed."
+53,Overall Aesthetics Assessment,Visual Opinion,Score,"Poor aesthetically speaking, Perfect",Overall scoring of the aesthetics perception of the expert,"Overall scoring of the aesthetics perception of the expert.
+Value of 0: The image is very poor aesthetically speaking;
+At 100: the photograph is perfect.
+Score type: continuous score between 0 and 100.","This parameter represents the overall perception of the image's aesthetics, as evaluated by an expert. It reflects the visual strength, emotional impact, artistic balance, stylistic coherence, and originality of the photograph. This assessment may incorporate technical criteria, but is not limited to them: it also values ​​the intention, the emotion conveyed, and the power of the final result.
+
+Examples of ratings:
+- 0: The image is perceived as aesthetically very poor, confusing, or lacking visual interest; no structure or impact.
+- 50: The image is aesthetically acceptable but lacks originality or particular strength; pleasant but neutral to view.
+- 100: The image is perceived as aesthetically very strong: remarkable composition, palpable emotion, assertive or bold style."
+54,Overall Technical Assessment,Visual Opinion,Score,"Very poor, Perfect",Overall scoring of the technicality of the image from the expert,"Overall scoring of the technicality of the image from the expert.
+Value of 0: The image is very poor technically speaking;
+At 100: the photograph is perfect in terms of photography technique mastery.
+Score type: continuous score between 0 and 100.","This parameter measures, on a scale of 0 to 100, the overall technical quality of the image as assessed by an expert. It synthesizes all the criteria of photographic mastery: exposure, sharpness, white balance, light management, digital noise, distortion, optical aberrations, etc. This score does not take into account emotional or aesthetic impact, but only the perceived rigor of technical execution.
+
+Examples of scores:
+- 0: The image has serious technical flaws: blurry, underexposed, noisy, distorted, or underutilized.
+- 50: The image is technically correct, but contains noticeable imperfections or poorly controlled settings.
+- 100: The image is technically flawless: perfect exposure, controlled sharpness, precise rendering, no visible anomalies."
+55,Double Exposure,Effect,Boolean,Does the image represent a double exposure?,Technique that overlays two or more images to create a single composite image.,"Technique that overlays two or more images to create a single composite image.
+Does the image represent a double exposure?
+Score type: Boolean.","This parameter detects whether the image represents a double exposure, that is, an intentional superimposition of two or more scenes in a single composite image. This technique is manifested by the visible merging of two subjects, textures, or silhouettes, often with partial transparencies or overlapping edges. It can be achieved during shooting (film or digital) or in post-production, but must be clearly identifiable by the simultaneous presence of two distinct image levels.
+
+Examples:
+– True: A face blending into a landscape, a human body mixed with natural or urban textures, two scenes superimposed with transparency.
+
+– False: An image containing reflections in a window, multiple shadows, or semi-transparent objects, without a deliberate merging effect between two distinct scenes."
+56,Development,Effect,Boolean,Has the image been developed?,"Modifications made after shooting, such as cropping, color adjustment, etc.","Modifications made after shooting, such as cropping, color adjustment, etc.
+Has the image been developed?
+Score type: Boolean.","This parameter detects whether the image has been processed, meaning whether it has undergone adjustments after shooting to improve or correct its appearance. This can include operations such as cropping, adjusting exposure, contrast, white balance, saturation, or optimizing certain details. This criterion does not cover advanced retouching or compositing, but only processing associated with a photographic development process, whether digital or analog.
+
+Examples:
+– True: The image has been corrected in terms of light, color, or composition after shooting.
+
+– False: The image appears as it came from the sensor or film, without any visible or perceptible modifications."
+57,Retouching,Effect,Boolean,Has the image been retouched?,Image retouching.,"Image retouching.
+Has the image been retouched?
+Score type: Boolean.","This parameter detects whether the image has been retouched, meaning whether targeted modifications have been made to its content after it was taken. This includes operations such as removing or adding elements, smoothing skin, altering shapes, correcting specific flaws, or any localized intervention aimed at transforming a part of the image. This criterion goes beyond overall development (exposure, color, cropping) to encompass direct manipulations of the visual content.
+
+Examples:
+– True: Objects have been erased, body parts modified, or elements moved or rearranged.
+
+– False: The image has simply been developed (overall adjustments to contrast, exposure, hue, etc.), without any localized modifications or alterations to the content."
+58,HDR (High Dynamic Range),Effect,Boolean,Does the image use HDR techniques?,Technique combining multiple exposures for one image to manage extreme contrasts.,"Technique combining multiple exposures for one image to manage extreme contrasts.
+Does the image use HDR techniques?
+Score type: Boolean.","This parameter identifies whether the image uses HDR (High Dynamic Range) technology, which combines multiple exposures to create a single image capable of simultaneously preserving detail in both very dark and very bright areas. This type of rendering is characterized by exceptional dynamic range reproduction, often visible in high-contrast scenes such as backlit skies, interiors facing a window, or landscapes with low sunlight. The criterion can also be applied to simulated HDR digital processing.
+
+Examples:
+– True: The image shows a detailed sky with clouds in bright sunlight and deep shadows with texture; there is no flattening or overexposure.
+
+– False: The image appears well-exposed but loses detail in the shadows or highlights; there is no perceptible blending of multiple exposures."
+59,Image Realism,Effect,Score,"Not at all realistic, Completely realistic",Image realism level,"Image realism level.
+Is the image realistic?
+Value of 0: The image is not at all realistic;
+At 100: The image is completely realistic.
+Score type: continuous score between 0 and 100.","This parameter measures how realistic the image appears, that is, whether it could be perceived as a real scene captured by a camera, without any glaring visual inconsistencies. Realism is assessed through the consistency of lighting, textures, volumes, colors, proportions, and the overall environment. A highly realistic image will appear indistinguishable from a real photograph; an unrealistic image will exhibit visual anomalies, digital effects, or elements incompatible with the real world.
+
+Examples of the rating:
+- 0: The image is clearly unrealistic: abnormal proportions, inconsistent lighting, artificial textures, impossible elements.
+
+- 50: The image has an overall believable structure, but certain details (textures, hands, perspective, etc.) disrupt its plausibility.
+
+- 100: The image is entirely consistent with a real scene: natural lighting, believable volumes, realistic textures, no detectable anomalies."
+60,AI Creation Probabiltiy,Effect,Score,"Low,High",The likelihood that the photo is created by artificial intelligence.,"Define here the likelihood that the photo is created by artificial intelligence.
+Value of 0: definitely not created by AI;
+At 100: definitely created by AI.
+Score type: continuous score between 0 and 100.","This parameter measures the probability that an image was generated by artificial intelligence, based on its visual appearance. The analysis relies on identifying characteristics common in synthetic images: anatomical inconsistencies, artificial textures, unrealistic lighting, blurred or generated backgrounds, abnormal repetitions, or excessive digital sharpening. The score reflects a visual assessment, without technical certainty, and should not take into account the file's metadata.
+
+Scoring examples:
+- 0: The image exhibits all the hallmarks of a real photograph: natural proportions, consistent details, believable imperfections.
+- 50: Some elements appear believable, but blurry areas, inconsistent textures, or structural errors raise doubts.
+- 100: The image is clearly synthetic: morphological or geometric inconsistencies, unrealistic textures, overly smooth or artificial rendering."
+61,Photographic Intent,Narration,Text,Description of the intention intended by the photographer who created the image,Message or emotion conveyed by the photographer.,"Message or emotion conveyed by the photographer.
+Describe the intention intended by the photographer who created the image.
+Score type: text.","This parameter describes the photographer's intention behind the image, that is, the message, idea, or emotion they seem to want to express. The analysis can focus on the choice of subject, the style of processing, the atmosphere created, or the narrative elements present in the scene. The goal is to interpret what the image seeks to convey beyond its technical or aesthetic qualities.
+
+Examples of expected answers:
+
+– Suggest urban solitude through distant framing and the subject's isolation.
+
+– Create a sense of calm through the use of cool colors and symmetry.
+
+– Show the fragility of childhood through a gaze captured against the light.
+
+– Celebrate the dynamism of a body in motion within a raw and graphic setting."
+62,Emotional Impact,Narration,Text,Viewer's feelings,Viewer's feeling.,"Describe the viewer's feelings.
+Score type: text.","## 🧠 Prompt AI — Free Emotional Reading (v1)
+
+### 🎭 ROLE
+You are a **visual critic specializing in emotional perception**, tasked with conveying in writing the **overall feeling that a photograph can evoke**. You must neither rate the image nor structure your response with numerical data. Your analysis must be **fluid, sensitive, and natural**, like an oral observation or a gallery caption.
+
+---
+
+### 🎯 OBJECTIVE
+
+Describe, in a single text:
+
+- **The emotions that the image is likely to trigger** in an average viewer.
+
+- **The overall atmosphere** conveyed by the image (light, colors, gestures, ambiance).
+
+- **The dominant visual feeling** (serenity, tension, tenderness, mystery, warmth, etc.).
+
+Use a vocabulary that is **subtle, evocative, and poetic if necessary**, but remain clear and grounded in the visual.
+
+---
+
+### 🔗 STYLE GUIDELINES
+- One text response only, without dashes, bullet points, scores, or tables.
+
+- No technical evaluation.
+
+- Write in a **sensitive and accessible** style, somewhere between art criticism and personal observation.
+
+---
+
+### 🧾 EXAMPLE OUTPUT
+> The image conveys a feeling of gentleness and immediate intimacy. The eye is drawn to the relaxed expressions, the natural light, and the simplicity of the moment. There is a sense of preserved, almost silent intimacy, like a moment suspended between bursts of laughter or a still-unseen gesture of tenderness. Nothing tries to impress; everything seems genuine. A sincere and peaceful atmosphere emanates from it.
+
+---
+
+Use this format for each image you analyze. No JSON output is expected."
+63,Intended Purpose,Exploitation,Text,Intended use of the image,Use of the image.,"Describe the intended use of the image.
+Score type: text.","This parameter describes the intended or likely use of the image, based on its style, intention, level of detail, and visual context. It could be for artistic, personal, commercial, or editorial purposes. The goal is to situate the photograph within its intended or interpreted context, whether public, private, or institutional.
+
+Examples of expected responses:
+
+– Advertising use for a lifestyle campaign for a clothing brand.
+
+– Illustration for a press article on dehumanized urban spaces.
+
+– Gallery display as part of a series of conceptual portraits.
+
+– Personal memento of a family or intimate moment.
+
+"
+64,Target Audience,Exploitation,Text,Image target.,Target of the image.,"Determine the target audience of the image.
+Score type: text.","This parameter identifies the target audience for the image, based on its visual style, content, narrative intent, or likely distribution channel. The audience can be defined by criteria such as age, culture, profession, interests, or aesthetic sensibilities. This information can be interpreted or stated.
+
+Examples of expected responses:
+– Young adults interested in contemporary urban fashion.
+
+– Graphic design or visual advertising professionals.
+
+– Families seeking to document authentic life moments.
+
+– Viewers sensitive to environmental or social issues.
+
+– Viewers of a conceptual photography exhibition."
+65,Detailed Emotional Impact,Narration,Text,,,,"## 🧠 Prompt AI — Emotional Impact Assessment (v1.2)
+
+### 🎭 ROLE
+You are an **image critic specializing in emotional perception**, tasked with analyzing the **overall emotional impact of a photograph on different types of viewers**.
+
+You rely on the **visual experience**, the atmosphere of the image, and the **photographer's intention, if specified**. You also adapt your analysis according to the **context of use** of the image.
+
+---
+
+### 🎯 OBJECTIVE
+
+You must:
+
+1. Identify the **most commonly felt emotions** when viewing the image.
+
+2. **Weight each emotion** with an **estimated percentage** of probability.
+
+3. Provide an **overall emotional intensity score** (from 0 to 100).
+
+4. Differentiate **according to 2 or 3 standard viewer types**.
+
+5. If an **explicit emotional intention** is provided, analyze the **alignment between the intention and the perceived effect**.
+
+6. Adapt the emotional interpretations according to the **context of use** provided.
+
+---
+
+### 🧩 LIST OF PREDEFINED EMOTIONS
+
+Use a selection from this list (which can be customized):
+**Joy, Calm, Nostalgia, Pride, Sadness, Fascination, Excitement, Unease, Wonder, Serenity, Discomfort, Boredom**
+
+---
+
+### 🧬 TYPES OF SPECTATORS (typical profile)
+
+- `general_public` (average spectator)
+- `feminine_perspective` (feminine artistic sensibility)
+- `masculine_perspective` (masculine sensibility)
+- `advertising_client` (potential marketing interpretation)
+
+You can ignore one or more profiles if they don't seem relevant.
+
+---
+
+### 📝 INTENTION (optional)
+
+If an **emotional intention of the photographer** is provided (e.g., ""to convey childhood nostalgia""), evaluate:
+- The **consistency** between the intention and the perceived emotions
+- The **success** of the rendering on a scale of 0 to 100
+- Add a **brief textual justification**
+
+---
+
+### 🧭 CONTEXT OF USE (optional)
+
+Adapt the emotional interpretation according to the provided context of use. Choose from:
+
+- `personal` (souvenir photo, diary, blog)
+- `advertising` (communication, product, lifestyle)
+- `exhibition` (gallery, contemporary art, installation)
+- `editorial` (press illustration or publication)
+
+---
+
+### 🧾 OUTPUT FORMAT
+
+```json
+{
+""overall_emotional_impact"": 72,
+
+""main_emotions"": {
+
+""calm"": 60,
+
+""nostalgia"": 50,
+
+""pride"": 30
+
+},
+
+""interpretation_according_to_profile"": {
+
+""general_audience"": {
+
+""emotions"": { ""calm"": 60, ""nostalgia"": 50 },
+
+""intensity"": 65,
+
+""rating"": ""Image perceived as calming and evocative of memories.""
+
+},
+
+""feminine_gaze"": {
+
+""emotions"": { ""warmth"": 55, ""sensuality"": 40 },
+
+""intensity"": 70,
+
+""rating"": ""Soft perception of the curves and overall emotional warmth.""
+
+},
+
+""masculine_gaze"": {
+
+""emotions"": { ""excitement"": 50, ""curiosity"": 40 },
+
+""intensity"": 75,
+
+""rating"": ""A more direct and stimulating reading of the presented forms.""
+
+}
+
+},
+
+""alignment_with_intention"": {
+
+""stated_intention"": ""To evoke childhood nostalgia"",
+
+""coherence"": true,
+
+""success"": 85,
+
+""justification"": ""The softness of the colors and the staging effectively evoke a warm, cherished memory.""
+
+},
+
+""analysis_according_to_context"": {
+""personal"": {
+""rating"": ""Ideal image to evoke an intimate memory, a suspended moment in a familiar place."",
+
+""intensity"": 70
+
+},
+
+""advertising"": {
+""rating"": ""Bright, warm, and natural atmosphere, suitable for promoting home decor, lifestyle, or slow living products."",
+
+""intensity"": 65
+
+},
+
+""exhibition"": {
+""rating"": ""A poetic interpretation of space and everyday life. Light and objects converse in a simple and nostalgic aesthetic."",
+
+""intensity"": 60
+
+}
+
+}
+```"
